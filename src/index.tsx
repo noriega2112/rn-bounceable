@@ -22,6 +22,7 @@ export type BounceableProps = React.PropsWithChildren<{
   delayActiveScale?: number;
   springConfig?: WithSpringConfig;
   contentContainerStyle?: StyleProp<ViewStyle>;
+  testID?: string;
 }>;
 
 export const Bounceable: React.FC<BounceableProps> = ({
@@ -41,6 +42,7 @@ export const Bounceable: React.FC<BounceableProps> = ({
   delayActiveScale = 0,
   onLongPress,
   immediatePress = true,
+  testID,
 }) => {
   const onLongPressTimeoutId = useSharedValue<null | ReturnType<typeof setTimeout>>(null);
   const scale = useSharedValue(1);
@@ -149,6 +151,7 @@ export const Bounceable: React.FC<BounceableProps> = ({
           return;
         }
       }}
+      testID={testID}
     >
       {Children}
     </TapGestureHandler>

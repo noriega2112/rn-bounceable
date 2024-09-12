@@ -69,6 +69,7 @@ type BounceableProps = {
   delayActiveScale?: number; // default: 0
   springConfig?: Animated.WithSpringConfig; // default: { damping: 10, mass: 1, stiffness: 300 }
   contentContainerStyle?: StyleProp<ViewStyle>;
+  testID?: string;
 };
 ```
 
